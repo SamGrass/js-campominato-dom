@@ -46,8 +46,9 @@ btnPlay.addEventListener ('click',
                     // se viene cliccata una bomba faccio vedere il punteggio
                     if (squareRed.length === 1) {
                         result.append(`Hai perso, il tuo punteggio è: ${squareBlue.length}`)
-                        console.log(squareRed);
-                    }  
+                    }  else if (squareBlue.length === 84) {
+                        result.append(`Hai vinto, il tuo punteggio è: ${squareBlue.length}`)
+                    }
                 }
             )
             squareContainer.append(square);
