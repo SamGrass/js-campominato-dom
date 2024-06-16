@@ -74,3 +74,10 @@ h1 {
 .square.clicked.blue {
     background-color: rgb(21, 62, 196);
 }
+
+.blue-txt {
+    color: rgb(21, 62, 196);
+}
+h2 {
+    margin-bottom: 1.5rem;
+}

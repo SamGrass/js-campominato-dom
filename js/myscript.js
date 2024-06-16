@@ -2,10 +2,15 @@
 // collego elemento bottone e elemento container
 const btnPlay = document.getElementById("play");
 const squareContainer = document.querySelector(".row");
+const result = document.querySelector("h2");
+// creo array per sapere quante celle blu sono state cliccate
+let squareBlue = document.getElementsByClassName("blue clicked");
+let squareRed = document.getElementsByClassName("square red clicked");
 // aggiungo evento click 
 btnPlay.addEventListener ('click',
     function () {
         squareContainer.innerHTML = '';
+        result.innerHTML = '';
         // aggiungo bordo alla griglia
         squareContainer.classList.add("black-border");
         // creo 16 bombe da inserire casualmente nella griglia
@@ -30,25 +35,25 @@ btnPlay.addEventListener ('click',
 
             // do le classi in base alla posizione delle bombe
             if (bomb.includes(i)) {
-                square.classList.add("red")  
+                square.classList.add("red");  
             } else {
-                square.classList.add("blue")  
+                square.classList.add("blue");  
             }
-
             // aggiungo click all'elemento per dare classe e far apparire il numero index
             square.addEventListener('click', 
                 function () {
-                    square.classList.toggle("clicked");
-                    console.log(i);
+                    square.classList.add("clicked");
+                    // se viene cliccata una bomba faccio vedere il punteggio
+                    if (squareRed.length === 1) {
+                        result.append(`Hai perso, il tuo punteggio è: ${squareBlue.length}`)
+                        console.log(squareRed);
+                    }  
                 }
             )
-
-            
             squareContainer.append(square);
         } 
     }
 )
-
 
 
 
