@@ -28,6 +28,13 @@ btnPlay.addEventListener ('click',
             square.classList.add("square");
             square.append(i)
 
+            // do le classi in base alla posizione delle bombe
+            if (bomb.includes(i)) {
+                square.classList.add("red")  
+            } else {
+                square.classList.add("blue")  
+            }
+
             // aggiungo click all'elemento per dare classe e far apparire il numero index
             square.addEventListener('click', 
                 function () {
@@ -35,12 +42,7 @@ btnPlay.addEventListener ('click',
                     console.log(i);
                 }
             )
-            
-            if (bomb.includes(i)) {
-                square.classList.add("red")  
-            } else {
-                square.classList.add("blue")  
-            }
+
             
             squareContainer.append(square);
         } 

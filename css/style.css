@@ -65,6 +65,12 @@ h1 {
 }
 
 /* regole quadrato cliccato */
-.square.clicked {
-    background-color: rgb(21, 196, 59);
+.square.clicked.red {
+    background-color: rgb(221, 21, 21);
+    content: url(../img/image-from-rawpixel-id-6287121-png.png);
+    
+}
+
+.square.clicked.blue {
+    background-color: rgb(21, 62, 196);
 }
